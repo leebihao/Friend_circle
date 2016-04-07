@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="3dp" >
+
+    <ImageView
+        android:id="@+id/iv_user_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:padding="5dp"
+        android:src="@drawable/a1w" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@id/iv_user_icon"
+        android:text="奥巴马"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_content_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_user_name"
+        android:layout_below="@id/tv_user_name"
+        android:orientation="vertical" >
+
+        <com.lbh.friendcircledemo.views.ContentTextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@null"
+            android:linksClickable="true"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="true"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_more_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="3dp"
+            android:text="更多"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_show_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_user_name"
+        android:layout_below="@id/ll_content_text"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/iv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:src="@drawable/pic_item_list_default"
+            android:visibility="gone" />
+
+        <com.lbh.friendcircledemo.views.PhotoGridView
+            android:id="@+id/gv_show_photo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp"
+            android:columnWidth="20dp"
+            android:gravity="center"
+            android:horizontalSpacing="4dp"
+            android:numColumns="3"
+            android:paddingRight="12dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="4dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_user_name"
+        android:layout_below="@id/ll_show_photo"
+        android:layout_marginTop="4dp" >
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1天前"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="13dp"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/to_comment" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_admire_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_user_name"
+        android:layout_alignRight="@+id/rl_menu"
+        android:layout_below="@id/rl_menu"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <!--
+             <ImageView
+            android:id="@+id/tv_left_admire_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/adk" />
+        -->
+
+        <TextView
+            android:id="@+id/tv_admire_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="12sp"
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_diver"
+        android:layout_width="250dp"
+        android:layout_height="0.2dp"
+        android:layout_alignLeft="@+id/tv_user_name"
+        android:layout_below="@id/ll_admire_user"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray"
+        android:padding="3dp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lv_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_user_name"
+        android:layout_alignRight="@+id/rl_menu"
+        android:layout_below="@id/v_diver"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:divider="@null"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone" >
+    </ListView>
+
+</RelativeLayout>
